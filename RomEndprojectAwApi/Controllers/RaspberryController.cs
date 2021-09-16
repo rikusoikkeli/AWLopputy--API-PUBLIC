@@ -35,7 +35,6 @@ namespace RomEndprojectAwApiRikun.Controllers
         public async void Post([FromBody] Capture value)
         {
             string message = JsonConvert.SerializeObject(value);
-            // CONNECTIONSTRING AND TARGETDEVICE CANNOT BE HARD CODED HERE!!!!!!!!
             string targetDevice = "RaspberryPi";                                        // The target device
             ServiceClient serviceClient;                                                // Use serviceclient class to establish connetion to azure device
             serviceClient = ServiceClient.CreateFromConnectionString(_configuration.GetConnectionString("IoTHub"));
